@@ -41,18 +41,34 @@
 # 3) Узнайте у пользователя число n. Найдите сумму чисел n + nn + nnn.
 # Например, пользователь ввёл число 3. Считаем 3 + 33 + 333 = 369.
 
-number = input('Введите число n: ')
-
-def find_sum(n_entering):
-    """Find sum: n + nn + nnn"""
-    n_n = n_entering * 2
-    n_n_n = n_entering * 3
-    return int(n_entering) + int(n_n) + int(n_n_n)
-
-print(f'Искомая сумма: {find_sum(number)}')
+# number = input('Введите число n: ')
+#
+# def find_sum(n_entering):
+#     """Find sum: n + nn + nnn"""
+#     n_n = n_entering * 2
+#     n_n_n = n_entering * 3
+#     return int(n_entering) + int(n_n) + int(n_n_n)
+#
+# print(f'Искомая сумма: {find_sum(number)}')
 
 # 4) Пользователь вводит целое положительное число. Найдите самую большую цифру
 # в числе. Для решения используйте цикл while и арифметические операции.
+
+input_number = int(input('Введите целое положительное число: '))
+
+def find_max_digit(number):
+    """Find max digit"""
+    max_digit = number % 10
+    while number != 0:
+        compare_digit = number // 10 % 10
+        if compare_digit > max_digit:
+            max_digit = compare_digit
+        number = number // 10
+    return max_digit
+
+print(find_max_digit(input_number))
+
+
 # 5) Запросите у пользователя значения выручки и издержек фирмы. Определите,
 # с каким финансовым результатом работает фирма (прибыль — выручка больше
 # издержек, или убыток — издержки больше выручки). Выведите соответствующее
