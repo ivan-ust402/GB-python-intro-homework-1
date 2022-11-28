@@ -5,13 +5,13 @@
 # запросите у пользователя несколько чисел и строк и сохраните в переменные,
 # выведите на экран.
 
-first_cat_name = 'Мурзик'
-first_cat_age = 3
-first_cat_color = 'black'
+NAME = 'Мурзик'
+AGE = 3
+COLOR = 'black'
 
-print(first_cat_name)
-print(first_cat_age)
-print(first_cat_color)
+print(NAME)
+print(AGE)
+print(COLOR)
 
 second_cat_name = input('Введите имя кота: ')
 second_cat_age = input('Введите возраст кота: ')
@@ -24,8 +24,24 @@ print(f'Цвет вашего кота: {second_cat_color}')
 # 2) Пользователь вводит время в секундах. Переведите время в часы,
 # минуты и секунды и выведите в формате чч:мм:сс. Используйте
 # форматирование строк.
+
+count_of_seconds = int(input('Введите число секунд: '))
+
+
+def get_formatting_time(time_in_seconds):
+    """Get formatting time method"""
+    hours = time_in_seconds // 3600
+    minutes_in_seconds = (time_in_seconds - hours * 3600)
+    minutes = minutes_in_seconds // 60
+    seconds = (minutes_in_seconds - minutes * 60)
+    print(f'{hours}:{minutes}:{seconds}')
+
+
+get_formatting_time(count_of_seconds)
+
 # 3) Узнайте у пользователя число n. Найдите сумму чисел n + nn + nnn.
 # Например, пользователь ввёл число 3. Считаем 3 + 33 + 333 = 369.
+
 # 4) Пользователь вводит целое положительное число. Найдите самую большую цифру
 # в числе. Для решения используйте цикл while и арифметические операции.
 # 5) Запросите у пользователя значения выручки и издержек фирмы. Определите,
@@ -49,4 +65,3 @@ print(f'Цвет вашего кота: {second_cat_color}')
 # 5-й день: 2,93
 # 6-й день: 3,22
 # Ответ: на 6-й день спортсмен достиг результата — не менее 3 км.
-
