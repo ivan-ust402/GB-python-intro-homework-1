@@ -76,24 +76,24 @@
 # выручки (соотношение прибыли к выручке). Далее запросите численность
 # сотрудников фирмы и определите прибыль фирмы в расчете на одного сотрудника.
 
-first_value = int(input('Введите значение выручки: '))
-second_value = int(input('Введите значение издержек: '))
-
-def check_financial_results(proceeds, costs):
-    """calculation of the financial result of the company"""
-    result = proceeds - costs
-    if result > 0:
-        print('Прибыль')
-        profitability = (proceeds - costs) / proceeds
-        print(f'Рентабельность: {profitability}')
-        employee = int(input("Введите число сотрудников: "))
-        profit_per_employee = result / employee
-        print(f'Прибыль фирмы в расчете на одного сотрудника: '
-              f'{profit_per_employee}')
-    else:
-        print('Убыток')
-
-check_financial_results(first_value, second_value)
+# first_value = int(input('Введите значение выручки: '))
+# second_value = int(input('Введите значение издержек: '))
+#
+# def check_financial_results(proceeds, costs):
+#     """calculation of the financial result of the company"""
+#     result = proceeds - costs
+#     if result > 0:
+#         print('Прибыль')
+#         profitability = (proceeds - costs) / proceeds
+#         print(f'Рентабельность: {profitability}')
+#         employee = int(input("Введите число сотрудников: "))
+#         profit_per_employee = result / employee
+#         print(f'Прибыль фирмы в расчете на одного сотрудника: '
+#               f'{profit_per_employee}')
+#     else:
+#         print('Убыток')
+#
+# check_financial_results(first_value, second_value)
 
 # 6) Спортсмен занимается ежедневными пробежками. В первый день его результат
 # составил a километров. Каждый день спортсмен увеличивал результат на 10 %
@@ -110,3 +110,18 @@ check_financial_results(first_value, second_value)
 # 5-й день: 2,93
 # 6-й день: 3,22
 # Ответ: на 6-й день спортсмен достиг результата — не менее 3 км.
+
+a = int(input('Введите километраж первого дня, a: '))
+b = int(input('Введите километраж, который он должен достигнуть, b: '))
+
+def calculation_days(first_distance, finish_distance):
+    """Determination of the day when the athlete reaches his goal"""
+    day = 1
+    result = first_distance
+    while result < finish_distance:
+        result = result + result * 10 / 100
+        day += 1
+    return day
+
+print(f'Номер дня, когда спортсмен пробежит {b} км: '
+      f'{calculation_days(a, b)} день')
