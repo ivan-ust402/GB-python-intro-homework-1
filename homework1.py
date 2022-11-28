@@ -66,7 +66,7 @@ def find_max_digit(number):
         number = number // 10
     return max_digit
 
-print(find_max_digit(input_number))
+print(f'Максимальная цифра: {find_max_digit(input_number)}')
 
 
 # 5) Запросите у пользователя значения выручки и издержек фирмы. Определите,
