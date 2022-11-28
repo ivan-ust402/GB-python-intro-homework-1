@@ -54,19 +54,19 @@
 # 4) Пользователь вводит целое положительное число. Найдите самую большую цифру
 # в числе. Для решения используйте цикл while и арифметические операции.
 
-input_number = int(input('Введите целое положительное число: '))
-
-def find_max_digit(number):
-    """Find max digit"""
-    max_digit = number % 10
-    while number != 0:
-        compare_digit = number // 10 % 10
-        if compare_digit > max_digit:
-            max_digit = compare_digit
-        number = number // 10
-    return max_digit
-
-print(f'Максимальная цифра: {find_max_digit(input_number)}')
+# input_number = int(input('Введите целое положительное число: '))
+#
+# def find_max_digit(number):
+#     """Find max digit"""
+#     max_digit = number % 10
+#     while number != 0:
+#         compare_digit = number // 10 % 10
+#         if compare_digit > max_digit:
+#             max_digit = compare_digit
+#         number = number // 10
+#     return max_digit
+#
+# print(f'Максимальная цифра: {find_max_digit(input_number)}')
 
 
 # 5) Запросите у пользователя значения выручки и издержек фирмы. Определите,
@@ -75,6 +75,26 @@ print(f'Максимальная цифра: {find_max_digit(input_number)}')
 # сообщение. Если фирма отработала с прибылью, вычислите рентабельность
 # выручки (соотношение прибыли к выручке). Далее запросите численность
 # сотрудников фирмы и определите прибыль фирмы в расчете на одного сотрудника.
+
+first_value = int(input('Введите значение выручки: '))
+second_value = int(input('Введите значение издержек: '))
+
+def check_financial_results(proceeds, costs):
+    """calculation of the financial result of the company"""
+    result = proceeds - costs
+    if result > 0:
+        print('Прибыль')
+        profitability = (proceeds - costs) / proceeds
+        print(f'Рентабельность: {profitability}')
+        employee = int(input("Введите число сотрудников: "))
+        profit_per_employee = result / employee
+        print(f'Прибыль фирмы в расчете на одного сотрудника: '
+              f'{profit_per_employee}')
+    else:
+        print('Убыток')
+
+check_financial_results(first_value, second_value)
+
 # 6) Спортсмен занимается ежедневными пробежками. В первый день его результат
 # составил a километров. Каждый день спортсмен увеличивал результат на 10 %
 # относительно предыдущего. Требуется определить номер дня, на который
