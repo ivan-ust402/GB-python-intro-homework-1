@@ -5,42 +5,51 @@
 # запросите у пользователя несколько чисел и строк и сохраните в переменные,
 # выведите на экран.
 
-NAME = 'Мурзик'
-AGE = 3
-COLOR = 'black'
-
-print(NAME)
-print(AGE)
-print(COLOR)
-
-second_cat_name = input('Введите имя кота: ')
-second_cat_age = input('Введите возраст кота: ')
-second_cat_color = input('Введите цвет кота: ')
-
-print(f'Имя вашего кота: {second_cat_name}')
-print(f'Возраст вашего кота: {second_cat_age}')
-print(f'Цвет вашего кота: {second_cat_color}')
+# NAME = 'Мурзик'
+# AGE = 3
+# COLOR = 'black'
+#
+# print(NAME)
+# print(AGE)
+# print(COLOR)
+#
+# second_cat_name = input('Введите имя кота: ')
+# second_cat_age = input('Введите возраст кота: ')
+# second_cat_color = input('Введите цвет кота: ')
+#
+# print(f'Имя вашего кота: {second_cat_name}')
+# print(f'Возраст вашего кота: {second_cat_age}')
+# print(f'Цвет вашего кота: {second_cat_color}')
 
 # 2) Пользователь вводит время в секундах. Переведите время в часы,
 # минуты и секунды и выведите в формате чч:мм:сс. Используйте
 # форматирование строк.
 
-count_of_seconds = int(input('Введите число секунд: '))
-
-
-def get_formatting_time(time_in_seconds):
-    """Get formatting time method"""
-    hours = time_in_seconds // 3600
-    minutes_in_seconds = (time_in_seconds - hours * 3600)
-    minutes = minutes_in_seconds // 60
-    seconds = (minutes_in_seconds - minutes * 60)
-    print(f'{hours}:{minutes}:{seconds}')
-
-
-get_formatting_time(count_of_seconds)
+# count_of_seconds = int(input('Введите число секунд: '))
+#
+# def get_formatting_time(time_in_seconds):
+#     """Get formatting time method"""
+#     hours = time_in_seconds // 3600
+#     minutes_in_seconds = (time_in_seconds - hours * 3600)
+#     minutes = minutes_in_seconds // 60
+#     seconds = (minutes_in_seconds - minutes * 60)
+#     print(f'{hours}:{minutes}:{seconds}')
+#
+#
+# get_formatting_time(count_of_seconds)
 
 # 3) Узнайте у пользователя число n. Найдите сумму чисел n + nn + nnn.
 # Например, пользователь ввёл число 3. Считаем 3 + 33 + 333 = 369.
+
+number = input('Введите число n: ')
+
+def find_sum(n_entering):
+    """Find sum: n + nn + nnn"""
+    n_n = n_entering * 2
+    n_n_n = n_entering * 3
+    return int(n_entering) + int(n_n) + int(n_n_n)
+
+print(f'Искомая сумма: {find_sum(number)}')
 
 # 4) Пользователь вводит целое положительное число. Найдите самую большую цифру
 # в числе. Для решения используйте цикл while и арифметические операции.
