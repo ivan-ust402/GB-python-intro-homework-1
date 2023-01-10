@@ -10,6 +10,7 @@ NAME = 'Мурзик'
 AGE = 3
 COLOR = 'black'
 
+# New comment
 print(NAME)
 print(AGE)
 print(COLOR)
